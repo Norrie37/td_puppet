@@ -87,3 +87,23 @@ Install r10k:
 Run puppet on the node using:
 
     puppet agent -t
+
+## 9 Setting up r10k to point to my remote repo
+
+Create home directory for r10k in puppet master:
+
+    mkdir /etc/puppetlabs/r10k
+
+Setup r10k.yaml config file:
+
+    vim /etc/puppetlabs/r10k/r10k.yaml
+
+Fill in the following contents:
+
+    ---
+    :cachedir: '/var/cache/r10k'
+
+    :sources:
+            :my-org:
+                    remote: 'https://github.com/Norrie37/td_puppet.git'
+                    basedir: '/etc/puppetlabs/code/environments'
