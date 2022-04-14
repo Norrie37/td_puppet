@@ -7,3 +7,8 @@ node default {
     content => 'This puppet master server hosts and manages vm-agents.',
   }
 }
+
+node "centos7-host.subnet04030040.vcn04030040.oraclevcn.com" {
+  include role::master_server
+}
+
